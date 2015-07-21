@@ -5,105 +5,100 @@ import java.util.Map;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-public class PHLight
-{
- @JsonIgnore   
- private String identifier;
+public class PHLight {
+
+    @JsonIgnore
+    private String identifier;
+
+    @JsonProperty("state")
+    private PHLightState state;
+
+    @JsonProperty("type")
+    private String type;
+
+    @JsonProperty("name")
+    private String name;
+
+    @JsonProperty("modelid")
+    private String modelid;
     
- @JsonProperty("state")
- private PHLightState state;
+    @JsonProperty("manufacturername")
+    private String manufacturername;
     
- @JsonProperty("type")
- private String type;
- 
- @JsonProperty("name")
- private String name; 
- 
- @JsonProperty("modelid")
- private String modelid;
- 
- @JsonProperty("swversion")
- private String  swversion;
-  
- @JsonProperty("pointsymbol")
- private Map<String, String> pointsymbol;
- 
- public PHLight() {}
- 
- public PHLight(PHLight light) {
-     this.name=light.name;
-     this.modelid = light.modelid;
-     this.state   = light.state;
-     this.swversion = light.swversion;
-     this.type =  light.type;
- }
- 
- public String getName()
- {
-  return name;
- }
+    @JsonProperty("uniqueid")
+    private String uniqueid;
 
- public void setName(String name)
- {
-  this.name = name;
- }
+    @JsonProperty("swversion")
+    private String swversion;
 
- public PHLightState getState()
- {
-  return state;
- }
+    @JsonProperty("pointsymbol")
+    private Map<String, String> pointsymbol;
 
- public void setState(PHLightState state)
- {
-  this.state = state;
- }
+    public PHLight() {
+    }
 
- public String getModelid()
- {
-  return modelid;
- }
+    public PHLight(PHLight light) {
+        this.name = light.name;
+        this.modelid = light.modelid;
+        this.state = light.state;
+        this.swversion = light.swversion;
+        this.type = light.type;
+    }
 
- public void setModelid(String modelid)
- {
-  this.modelid = modelid;
- }
+    public String getName() {
+        return name;
+    }
 
- public String getSwversion()
- {
-  return swversion;
- }
+    public void setName(String name) {
+        this.name = name;
+    }
 
- public void setSwversion(String swversion)
- {
-  this.swversion = swversion;
- }
+    public PHLightState getState() {
+        return state;
+    }
 
- public String getType()
- {
-  return type;
- }
+    public void setState(PHLightState state) {
+        this.state = state;
+    }
 
- public void setType(String type)
- {
-  this.type = type;
- }
+    public String getModelid() {
+        return modelid;
+    }
 
- public Map<String, String> getPointsymbol()
- {
-  return pointsymbol;
- }
+    public void setModelid(String modelid) {
+        this.modelid = modelid;
+    }
 
- public void setPointsymbol(Map<String, String> pointsymbol)
- {
-  this.pointsymbol = pointsymbol;
- }
+    public String getSwversion() {
+        return swversion;
+    }
 
- public String getIdentifier() {
-     return identifier;
- }
+    public void setSwversion(String swversion) {
+        this.swversion = swversion;
+    }
 
- public void setIdentifier(String identifier) {
-     this.identifier = identifier;
- }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Map<String, String> getPointsymbol() {
+        return pointsymbol;
+    }
+
+    public void setPointsymbol(Map<String, String> pointsymbol) {
+        this.pointsymbol = pointsymbol;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
 
 }

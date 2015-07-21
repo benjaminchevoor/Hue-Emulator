@@ -1,75 +1,80 @@
 package com.hueemulator.model;
 
 import java.util.Map;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
-public class PHBridgeConfiguration
-{
- @JsonProperty("lights")
- private Map<String, PHLight> lights;
- 
- @JsonProperty("schedules")
- private Map<String, PHSchedulesEntry> schedules;
- 
- @JsonProperty("config")
- private PHConfig config;
- 
- @JsonProperty("groups")
- private Map<String, PHGroupsEntry> groups;
-
- @JsonProperty("scenes")
- private Map<String, PHScenesEntry> scenes;
+public class PHBridgeConfiguration {
 
 
- public Map<String, PHLight> getLights()
- {
-  return lights;
- }
+    @JsonProperty("config")
+    private PHConfig config;
 
- public void setLights(Map<String, PHLight> lights)
- {
-  this.lights = lights;
- }
+    @JsonProperty("groups")
+    private Map<String, PHGroupsEntry> groups;
+    
+    @JsonProperty(value = "lights")
+    private Map<String, PHLight> lights;
+    
+    @JsonIgnore
+    private Object rules;
 
- public Map<String, PHSchedulesEntry> getSchedules()
- {
-  return schedules;
- }
+    @JsonProperty("scenes")
+    private Map<String, PHScenesEntry> scenes;
+    
+    @JsonProperty(value = "schedules")
+    private Map<String, PHSchedulesEntry> schedules;
+    
+    @JsonIgnore
+    private Object sensors;
 
- public void setSchedules(Map<String, PHSchedulesEntry> schedules)
- {
-  this.schedules = schedules;
- }
+    public PHConfig getConfig() {
+        return config;
+    }
 
- public PHConfig getConfig()
- {
-  return config;
- }
+    public Map<String, PHGroupsEntry> getGroups() {
+        return groups;
+    }
 
- public void setConfig(PHConfig config)
- {
-  this.config = config;
- }
+    public Map<String, PHLight> getLights() {
+        return lights;
+    }
 
- public Map<String, PHGroupsEntry> getGroups()
- {
-  return groups;
- }
+    public Object getRules() {
+        return rules;
+    }
 
- public Map<String, PHScenesEntry> getScenes()
- {
-     return scenes;
- }
+    public Map<String, PHScenesEntry> getScenes() {
+        return scenes;
+    }
 
- public void setGroups(Map<String, PHGroupsEntry> groups)
- {
-  this.groups = groups;
- }
+    public Map<String, PHSchedulesEntry> getSchedules() {
+        return schedules;
+    }
 
- public void setScenes(Map<String, PHScenesEntry> scenes)
- {
-     this.scenes = scenes;
- }
+    public Object getSensors() {
+        return sensors;
+    }
+
+    public void setConfig(PHConfig config) {
+        this.config = config;
+    }
+
+    public void setGroups(Map<String, PHGroupsEntry> groups) {
+        this.groups = groups;
+    }
+
+    public void setLights(Map<String, PHLight> lights) {
+        this.lights = lights;
+    }
+
+    public void setScenes(Map<String, PHScenesEntry> scenes) {
+        this.scenes = scenes;
+    }
+
+    public void setSchedules(Map<String, PHSchedulesEntry> schedules) {
+        this.schedules = schedules;
+    }
 
 }

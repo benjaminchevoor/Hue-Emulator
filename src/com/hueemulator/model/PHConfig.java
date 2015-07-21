@@ -1,190 +1,204 @@
 package com.hueemulator.model;
 
 import java.util.Map;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
-public class PHConfig
-{
- @JsonProperty("portalservices")
- private Boolean  portalservices;
- 
- @JsonProperty("gateway")
- private String  gateway;
- 
- @JsonProperty("mac")
- private String  mac;
- 
- @JsonProperty("swversion")
- private String  swversion;
- 
- @JsonProperty("linkbutton")
- private Boolean  linkbutton;
- 
- @JsonProperty("ipaddress")
- private String  ipaddress;
- 
- @JsonProperty("proxyport")
- private Integer  proxyport;
- 
- @JsonProperty("swupdate")
- private PHSwupdate swupdate;
- 
- @JsonProperty("netmask")
- private String  netmask;
- 
- @JsonProperty("name")
- private String  name;
- 
- @JsonProperty("dhcp")
- private Boolean  dhcp;
- 
- @JsonProperty("UTC")
- private String  utc;
- 
- @JsonProperty("proxyaddress")
- private String  proxyaddress;
- 
- @JsonProperty("whitelist")
- private Map<String, PHWhitelistEntry> whitelist;
+public class PHConfig {
+    
+    @JsonIgnore
+    private Object apiversion;
 
+    @JsonProperty("dhcp")
+    private Boolean dhcp;
 
+    @JsonProperty("gateway")
+    private String gateway;
+    
+    @JsonProperty(value = "ipaddress")
+    private String ipaddress;
+    
+    @JsonProperty(value = "linkbutton")
+    private Boolean linkbutton;
+    
+    @JsonIgnore
+    private Object localtime;
 
-public Boolean getPortalservices()
- {
-  return portalservices;
- }
+    @JsonProperty("mac")
+    private String mac;
 
- public void setPortalservices(Boolean portalservices)
- {
-  this.portalservices = portalservices;
- }
+    @JsonProperty("name")
+    private String name;
 
- public String getGateway()
- {
-  return gateway;
- }
+    @JsonProperty("netmask")
+    private String netmask;
+    
+    @JsonIgnore
+    private Object portalconnection;
 
- public void setGateway(String gateway)
- {
-  this.gateway = gateway;
- }
+    @JsonProperty("portalservices")
+    private Boolean portalservices;
+    @JsonIgnore
+    private Object portalstate;
+    
+    @JsonProperty(value = "proxyaddress")
+    private String proxyaddress;
 
- public String getMac()
- {
-  return mac;
- }
+    @JsonProperty("proxyport")
+    private Integer proxyport;
 
- public void setMac(String mac)
- {
-  this.mac = mac;
- }
+    @JsonProperty("swupdate")
+    private PHSwupdate swupdate;
 
- public String getSwversion()
- {
-  return swversion;
- }
+    @JsonProperty("swversion")
+    private String swversion;
+    
+    @JsonIgnore
+    private Object timezone;
 
- public void setSwversion(String swversion)
- {
-  this.swversion = swversion;
- }
+    @JsonProperty("UTC")
+    private String utc;
 
- public Boolean getLinkbutton()
- {
-  return linkbutton;
- }
+    @JsonProperty("whitelist")
+    private Map<String, PHWhitelistEntry> whitelist;
+    
+    @JsonIgnore
+    private Object zigbeechannel;    
 
- public void setLinkbutton(Boolean linkbutton)
- {
-  this.linkbutton = linkbutton;
- }
+    public Object getApiversion() {
+        return apiversion;
+    }
 
- public String getIpaddress()
- {
-  return ipaddress;
- }
+    public Boolean getDhcp() {
+        return dhcp;
+    }
 
- public void setIpaddress(String ipaddress)
- {
-  this.ipaddress = ipaddress;
- }
+    public String getGateway() {
+        return gateway;
+    }
 
- public Integer getProxyport()
- {
-  return proxyport;
- }
+    public String getIpaddress() {
+        return ipaddress;
+    }
 
- public void setProxyport(Integer proxyport)
- {
-  this.proxyport = proxyport;
- }
+    public Boolean getLinkbutton() {
+        return linkbutton;
+    }
 
- public PHSwupdate getSwupdate()
- {
-  return swupdate;
- }
+    public Object getLocaltime() {
+        return localtime;
+    }
 
- public void setSwupdate(PHSwupdate swupdate)
- {
-  this.swupdate = swupdate;
- }
+    public String getMac() {
+        return mac;
+    }
 
- public String getNetmask()
- {
-  return netmask;
- }
+    public String getName() {
+        return name;
+    }
 
- public void setNetmask(String netmask)
- {
-  this.netmask = netmask;
- }
+    public String getNetmask() {
+        return netmask;
+    }
 
- public String getName()
- {
-  return name;
- }
+    public Object getPortalconnection() {
+        return portalconnection;
+    }
 
- public void setName(String name)
- {
-  this.name = name;
- }
+    public Boolean getPortalservices() {
+        return portalservices;
+    }
 
- public Boolean getDhcp()
- {
-  return dhcp;
- }
+    public Object getPortalstate() {
+        return portalstate;
+    }
 
- public void setDhcp(Boolean dhcp)
- {
-  this.dhcp = dhcp;
- }
+    public String getProxyaddress() {
+        return proxyaddress;
+    }
 
- public String getUtc()
- {
-  return utc;
- }
+    public Integer getProxyport() {
+        return proxyport;
+    }
 
- public void setUtc(String utc)
- {
-  this.utc = utc;
- }
+    public PHSwupdate getSwupdate() {
+        return swupdate;
+    }
 
- public String getProxyaddress()
- {
-  return proxyaddress;
- }
+    public String getSwversion() {
+        return swversion;
+    }
 
- public void setProxyaddress(String proxyaddress)
- {
-  this.proxyaddress = proxyaddress;
- }
+    public Object getTimezone() {
+        return timezone;
+    }
 
- public Map<String, PHWhitelistEntry> getWhitelist() {
-	 return whitelist;
- }
+    public String getUtc() {
+        return utc;
+    }
 
- public void setWhitelist(Map<String, PHWhitelistEntry> whitelist) {
-	 this.whitelist = whitelist;
- }
+    public Map<String, PHWhitelistEntry> getWhitelist() {
+        return whitelist;
+    }
+
+    public Object getZigbeechannel() {
+        return zigbeechannel;
+    }
+
+    public void setDhcp(Boolean dhcp) {
+        this.dhcp = dhcp;
+    }
+
+    public void setGateway(String gateway) {
+        this.gateway = gateway;
+    }
+
+    public void setIpaddress(String ipaddress) {
+        this.ipaddress = ipaddress;
+    }
+
+    public void setLinkbutton(Boolean linkbutton) {
+        this.linkbutton = linkbutton;
+    }
+
+    public void setMac(String mac) {
+        this.mac = mac;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setNetmask(String netmask) {
+        this.netmask = netmask;
+    }
+
+    public void setPortalservices(Boolean portalservices) {
+        this.portalservices = portalservices;
+    }
+
+    public void setProxyaddress(String proxyaddress) {
+        this.proxyaddress = proxyaddress;
+    }
+
+    public void setProxyport(Integer proxyport) {
+        this.proxyport = proxyport;
+    }
+
+    public void setSwupdate(PHSwupdate swupdate) {
+        this.swupdate = swupdate;
+    }
+
+    public void setSwversion(String swversion) {
+        this.swversion = swversion;
+    }
+
+    public void setUtc(String utc) {
+        this.utc = utc;
+    }
+
+    public void setWhitelist(Map<String, PHWhitelistEntry> whitelist) {
+        this.whitelist = whitelist;
+    }
 }
